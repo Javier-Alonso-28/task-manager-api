@@ -25,3 +25,9 @@ logging:
   level:
     org.springframework.security: DEBUG
     org.hibernate.SQL: DEBUG
+
+# Configuración JWT
+app:
+  jwt:
+    secret: 7QmJrL5wXp2vZ8sN3kT9hY6bM4cF1aE0dRgU8iK7nOqHsVfWxZpYbAcDeFgHjKlMnP
+    expiration: 86400000   # 24 horas en milisegundos

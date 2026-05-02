@@ -47,6 +47,31 @@ Con paquetes adicionales para `dto`, `mapper`, `exception`, `security` y `config
      ```bash  
    ./mvnw spring-boot:run
 
+## 🧪 Probar la API con Postman
+
+En la carpeta `postman/` encontrarás la colección lista para importar:
+
+1. Abre Postman → clic en **Import** (esquina superior izquierda).
+2. Arrastra los archivos:
+   - `postman/Task-Manager-API.postman_collection.json`
+   - `postman/Task-Manager-Local.postman_environment.json`
+3. Selecciona el environment **"Task Manager"** en la esquina superior derecha.
+4. Asegúrate de que la app esté corriendo (`./mvnw spring-boot:run`).
+5. Ejecuta `Auth → Register` para crear un usuario y obtener tu JWT.
+6. El token se guarda automáticamente y todas las requests de `Tasks` lo usarán.
+
+### Endpoints disponibles
+
+| Método | Endpoint | Descripción | Auth |
+|--------|----------|-------------|------|
+| POST | `/api/v1/auth/register` | Registrar usuario | ❌ |
+| POST | `/api/v1/auth/login` | Iniciar sesión | ❌ |
+| POST | `/api/v1/tasks` | Crear tarea | ✅ |
+| GET | `/api/v1/tasks` | Listar tareas (con filtros y paginación) | ✅ |
+| GET | `/api/v1/tasks/{id}` | Obtener tarea por id | ✅ |
+| PUT | `/api/v1/tasks/{id}` | Actualizar tarea | ✅ |
+| DELETE | `/api/v1/tasks/{id}` | Eliminar tarea | ✅ |
+
 
 ## 📚 Endpoints (en construcción)   
 Próximamente: documentación completa con Swagger/OpenAPI.
